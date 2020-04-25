@@ -17,7 +17,7 @@ def scrape(url):
         article.parse()
         return article.title, article.text, None
     except Exception as err:
-        return None, None, err
+        return "", "", err
 
 if __name__ == '__main__':
     

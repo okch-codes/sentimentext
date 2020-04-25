@@ -12,7 +12,7 @@ def analyze():
     title_sent = sentiment(title)
     text_sent = sentiment(text)
     res = {'title': title,
-        'sentiment': {
+        'sentiment': { 
             'title': {'polarity': title_sent.polarity,
                         'subjectivity': title_sent.subjectivity},
             'text': {'polarity': text_sent.polarity,

@@ -27,5 +27,5 @@ def page_not_found(e):
 def internal_error(e):
     return flask.jsonify(error=500, text=str(e)), 500
 
-if __name__ == '__main__':
-      app.run(host='0.0.0.0', port=80)
+if __name__=='__main__':
+    app.run(debug=False, port=80)

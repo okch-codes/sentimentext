@@ -11,13 +11,10 @@ def sentiment(text):
     return TextBlob(text).sentiment
 
 def scrape(url):
-    try:
-        article = Article(url)
-        article.download()
-        article.parse()
-        return article.title, article.text, None
-    except Exception as err:
-        return "", "", err
+    article = Article(url)
+    article.download()
+    article.parse()
+    return article.title, article.text
 
 if __name__ == '__main__':
     

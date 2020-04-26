@@ -1,17 +1,25 @@
-API_URL = "http://127.0.0.1:8080/sentimentext/api/analyze";
-var jqxhr = $.get(API_URL, {url: encodeURIComponent(window.location.href)}, function (res) {
-    alert("success");
-    console.log("CIAO", res);
-})
-.done(function(res) {
-    alert("second success");
-    console.log("CIAO", res);
-})
-.fail(function(res) {
-    alert("error");
-    console.log("CIAO", res);
-})
-.always(function(res) {
-    alert("finished");
-    console.log("CIAO", res);
+function getNumber(num) {
+    num = num.toFixed(3);
+    if (num > 0) {
+        return "+" + num;
+    } else {
+        return num.toString();
+    }
+}
+
+chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+    if (msg.text.sentiment.text.subjectivity > 0.3 || msg.text.sentiment.text.polarity < -0.2) {
+        var bar = "<div id='sentiment-bar-alert' class='text-center fixed-top w-100 p-4' style='font-size:1rem;font-family:Source Sans Pro, sans-serif;background-color:#ffde59;color:#e83e41;z-index:2147483646;'><p class='mb-0'><strong class='text-dark' style='font-weight: 800;'>ATTENTION!</strong> The content of the webpage you are reading has an emotional content that is very similar to that of a <strong class='text-dark' style='font-weight: 800;'>FAKE NEWS!</strong></p><p class='mt-1 mb-0'><strong>Please, think before sharing.</strong></p><p class='mt-1 mb-0'>Polarity score: <span class='text-dark' style='font-weight:800'>" + getNumber(msg.text.sentiment.text.polarity) + "</span> Subjectivity score: <span class='text-dark' style='font-weight:800'>" + getNumber(msg.text.sentiment.text.subjectivity) + "</span></p><img style='height:20px;width:60px;margin: 0 auto;' class='mt-1' src='data:image/png;base64,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'></div>";
+        //$("body").append(bar);
+        $(bar).hide().appendTo("body").fadeIn('slow');
+        $('#sentiment-bar-alert').delay(10000).fadeOut('slow');
+        /*         var x = document.createElement("div");
+                var t = document.createTextNode("ATTENTION! The content of the webpage you are reading has an emotional content that is very similar to that of a FAKE NEWS! Please, think before sharing. Polarity score: " + msg.text.sentiment.text.polarity.toFixed(3) + " Subjectivity score: " + msg.text.sentiment.text.subjectivity.toFixed(3));
+                x.classList.add("text-center", "fixed-top", "w-100", "p-4");
+                x.style.zIndex = 2147483646;
+                x.style.backgroundColor = "#f9de5b";
+                x.style.color = "#e83e41";
+                x.appendChild(t);
+                document.body.appendChild(x); */
+    }
 });

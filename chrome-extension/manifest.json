@@ -15,21 +15,38 @@
                 "source/popup.js",
                 "source/content-script.js"
             ],
-            "css": ["source/lib/css/bootstrap.min.css"]
+            "css": [
+                "source/lib/css/bootstrap.min.css"
+            ]
         }
     ],
+    "web_accessible_resources": [
+        "source/lib/css/bootstrap.min.css",
+        "source/lib/fonts/Source_Sans_Pro/*.ttf"
+    ],
+    "permissions": [
+        "activeTab",
+        "tabs"
+    ],
+    "background": {
+        "scripts": [
+            "source/lib/js/jquery-3.5.0.min.js",
+            "source/background-script.js"
+        ],
+        "persistent": false
+    },
     "icons": {
         "16": "icons/icon16g.png",
         "48": "icons/icon48g.png",
-        "128": "icons/icon128g.png"   
+        "128": "icons/icon128g.png"
     },
     "browser_action": {
         "default_icon": {
             "16": "icons/icon16g.png",
             "48": "icons/icon48g.png",
-            "128": "icons/icon128g.png"   
+            "128": "icons/icon128g.png"
         },
-        "default_title": "Sentimentext", 
+        "default_title": "Sentimentext",
         "default_popup": "source/popup.html"
     }
 }

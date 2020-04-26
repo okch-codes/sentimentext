@@ -2,15 +2,18 @@
 import json
 import flask
 from sentiment import sentiment, scrape
+import urllib.parse
 
 app = flask.Flask(__name__)
 
 @app.route('/sentimentext/api/analyze')
 def analyze():
-    url = flask.request.args.get('url')
-    title, text, err = scrape(url)
+    url = urllib.parse.unquote(flask.request.args.get('url'))
+    print("REQUEST URL ARG PARSED ", url)
+    title, text = scrape(url)
     title_sent = sentiment(title)
     text_sent = sentiment(text)
+    print(text_sent, title_sent)
     res = {'title': title,
         'sentiment': { 
             'title': {'polarity': title_sent.polarity,

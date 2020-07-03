@@ -1,6 +1,3 @@
-![Sentimentext Logo](https://github.com/trimalcione/sentimentext/blob/master/res/logo.png?raw=true)
-
-
 # Sentimentext
 
 
@@ -8,6 +5,9 @@
 
 > Check the emotional content of your news
 
+## Logo
+
+![Sentimentext Logo](https://github.com/trimalcione/sentimentext/blob/master/res/logo.png?raw=true)
 
 ## Description
 

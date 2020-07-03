@@ -1,3 +1,5 @@
+![Python application](https://github.com/trimalcione/sentimentext/workflows/Python%20application/badge.svg)
+
 # Sentimentext
 
 

@@ -1,6 +1,6 @@
 ![Python application](https://github.com/trimalcione/sentimentext/workflows/Python%20application/badge.svg)
 
-# Sentimentext
+# Sentimentext (alpha)
 
 
 > Sentimentext is a browser extension that automatically warns users about those news articles that linguistically resemble the style of a fake news.

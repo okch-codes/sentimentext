@@ -18,9 +18,27 @@ Sentimentext is a browser extension that automatically warns users about those n
 
 Fake news are found to purposefully employ emotional jargon and emotional narratives to hamper logical-thinking and foster emotional responses istead. They want to make you feel something. The emotional load of a text is usually analysed with a machine learning technique called sentiment analysis, which scores text based on two values: polarity and subjectivity. Several studies show how fake news are likely to have negative polarity [Kapusta et al. 2020] and high subjectivity [Volkova et al. 2017]. We want to use this distinctive emotional content of fake news to fight misinformation and provide citizens with a simple tool which alerts them of such possible suspicious behaviour.
 
+## Getting started
+
+#### Requirements
+- Python >= 3.7.x
+- Google Chrome
+
+#### Backend deployment
+
+1) Place in the project directory
+2) Install dependencies with ``` pip install -r requirements.txt ```
+3) launch the REST services with ```python nlp\__init__.py```
+
+
+#### Chrome Extension Installation
+
+1) Go to chrome://extensions
+2) Enable _Developer mode_
+3) Click on _Load unpacked_ and browse to the folder where it's placed _manifest.json_
+
 
 ## Sentimentext's Chrome extension notification preview
-
 
 ![Screenshot](https://github.com/trimalcione/sentimentext/blob/master/res/screenshot.jpg?raw=true)
 

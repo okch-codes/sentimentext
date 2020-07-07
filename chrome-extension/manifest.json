@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Sentimentext",
     "version": "0.1",
-    "description": "Lorem ipsum",
+    "description": "Check the emotional content of your news",
     "content_scripts": [
         {
             "matches": [

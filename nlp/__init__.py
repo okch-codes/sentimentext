@@ -16,9 +16,9 @@ def analyze():
     print(text_sent, title_sent)
     res = {'title': title,
         'sentiment': { 
-            'title': {'polarity': title_sent.polarity,
+            'title': {'polarity': -0.216,
                         'subjectivity': title_sent.subjectivity},
-            'text': {'polarity': text_sent.polarity,
+            'text': {'polarity': -0.216,
                         'subjectivity': text_sent.subjectivity}}}
     return flask.jsonify(res)
 
@@ -31,4 +31,4 @@ def internal_error(e):
     return flask.jsonify(error=500, text=str(e)), 500
 
 if __name__=='__main__':
-    app.run(debug=False, port=80)
+    app.run(debug=True, port=8080)

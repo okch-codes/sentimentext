@@ -33,14 +33,14 @@ Fake news are found to purposefully employ emotional jargon and emotional narrat
 
 #### Chrome Extension Installation
 
-1) Go to chrome://extensions
+1) Go to ```chrome://extensions```
 2) Enable _Developer mode_
-3) Click on _Load unpacked_ and browse to the project folder _chrome-extension_, where it's placed _manifest.json_
+3) Click on _Load unpacked_ and browse to the project folder _chrome-extension_, where it's placed ```manifest.json```
 
 
 ## Sentimentext's Chrome extension notification preview
 
-![Screenshot](https://github.com/trimalcione/sentimentext/blob/master/res/screenshot.jpg?raw=true)
+![Extension preview](https://github.com/trimalcione/sentimentext/blob/master/res/screenshot.jpg?raw=true)
 
 
 ---
